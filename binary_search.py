@@ -1,16 +1,65 @@
+# Following this course:
+# https://jovian.ai/learn/data-structures-and-algorithms-in-python/lesson/lesson-1-binary-search-linked-lists-and-complexity
+
+# The complexity is: log(N) because...
+# Initial length - N
+
+# Iteration 1 - N/2
+#
+# Iteration 2 - N/4 i.e. N/2^2
+#
+# Iteration 3 - N/8 i.e. N/2^3
+#
+# ...
+#
+# Iteration k - N/2^k
+#
+# Since the final length of the array is 1, we can find the
+#
+# N/2^k = 1
+#
+# Rearranging the terms, we get
+#
+# N = 2^k
+#
+# Taking the logarithm
+#
+# k = log N
+#
+# Where log refers to log to the base 2. Therefore, our algorithm has the time complexity O(log N)
+
+#Auxiliary function in case the query is repeated in the array (we want the first appearance)
+def test_location(cards, query, mid):
+    mid_number = cards[mid]
+    if mid_number == query:
+        if mid-1 >= 0 and cards[mid-1] == query:
+            return 'left'
+        else:
+            return 'found'
+    elif mid_number < query:
+        return 'left'
+    else:
+        return 'right'
+
+
+# Given N number of cards, we are asked to guess the position of the card
+# which contains the number "query". We must guess it by accessing the minimum
+# number of cards possible (not using brute force)
+
 def locate_card(cards, query):
     lo, hi = 0, len(cards)-1
 
     while lo<=hi:
         mid = (lo+hi)//2 #floor division
 
-        print("mid",mid,"lo",lo,"hi",hi)
+        #print("mid",mid,"lo",lo,"hi",hi)
+        result = test_location(cards, query, mid)
 
-        if cards[mid] == query:
+        if result == 'found':
             return mid
-        elif(query > cards[mid]):
+        elif result == 'left':
             hi = mid-1
-        elif(query < cards[mid]):
+        elif result == 'right':
             lo = mid+1
 
     return -1
