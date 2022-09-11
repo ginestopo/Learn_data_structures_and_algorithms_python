@@ -13,7 +13,7 @@ We arrange the numbers on the left if they are lower and right if greater
 
 0 3 2 [5] 9 8 7
 
-and apply recursivity
+and apply recursivity on the left and right side
 
 
 """
