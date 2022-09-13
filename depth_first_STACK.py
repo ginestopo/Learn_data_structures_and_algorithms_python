@@ -23,6 +23,8 @@ Complexity          O(V+E)      where V are vertices and E are edges
 4º      Print: F     Stack: C
 5º      Print: C     Stack: E
 6º      Print: E     Stack: 
+
+Note: Breath First and Depth First are ALMOST IDENTICAL, only pop() or pop(0) is used in depth and breath respectively
 """
 
 from queue import Empty
