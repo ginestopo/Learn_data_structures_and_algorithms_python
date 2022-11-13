@@ -4,7 +4,7 @@
 #------------------------by Ginés Díaz-----------------------------
 
 """"
-Instructions (https://www.youtube.com/watch?v=kFeXwkgnQ9U&ab_channel=DerrickSherrill)
+Instructions (https://www.simplilearn.com/tutorials/data-structure-tutorial/bubble-sort-algorithm)
 
 0 9 3 8 2 7 5
 
@@ -16,6 +16,9 @@ We swap elements by pairs starting from the left.
 .
 .
 .
+
+We have to repeat this action N-1 because N is the length of the array,
+hence N-1 is the number of times a comparison can occur.
 
 """
 
