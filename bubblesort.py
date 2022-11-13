@@ -36,6 +36,10 @@ def bubblesort(sequence):
 
 
 
+            # TEST CASES
+
+
+
 tests = []
 
 tests.append({
@@ -58,6 +62,18 @@ tests.append({
 tests.append({
     'sequence':[1,-3,4,6,-9,8],
     'output':[-9,-3,1,4,6,8]
+}
+)
+
+tests.append({
+    'sequence':[],
+    'output':[]
+}
+)
+
+tests.append({
+    'sequence':[1],
+    'output':[1]
 }
 )
 
